@@ -38,6 +38,9 @@ function control(e,step){
 			rate=Math.round(prate*100)/100;
 			for(let i=0;i<len;i++){
 				media[i].playbackRate=rate;
+
+				// Save the rate to storage
+				browser.storage.local.set({"playbackRate": rate});
 			}
 			sendMessageRate(rate);
 			break;
@@ -46,6 +49,9 @@ function control(e,step){
 			rate=Math.round(mrate*100)/100;
 			for(let i=0;i<len;i++){
 				media[i].playbackRate=rate;
+
+				// Save the rate to storage
+				browser.storage.local.set({"playbackRate": rate});
 			}
 			sendMessageRate(rate);
 			break;

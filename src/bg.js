@@ -26,7 +26,8 @@ function handleInstalled(details){
 browser.commands.onCommand.addListener(command=>{
 	switch(command){
 		case "rateDefault":
-			control(1);
+			// read in saved playbackRate from storage
+			browser.storage.local.get("playbackRate", result => control(result)); 
 			break;
 		default:
 			control(command);
